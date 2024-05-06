@@ -1,0 +1,208 @@
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    height: 100%;
+}
+
+.navbar{
+    padding: 20px 5%;
+    display: flex; 
+    justify-content: space-between; align-items: center;
+    position: sticky; top: 0; z-index: 999;
+    background-color: black;
+}
+
+.navbar h1{
+    color: white; cursor: pointer;
+}
+
+.menu1{
+position: absolute; top: 0; right: 50px;
+padding: 20px 5%;
+}
+
+.navbar li{
+    list-style: none; display: inline-block;
+}
+
+.navbar li a{
+    display: block; 
+    margin-left: 20px;
+    color: white;
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+    font-size: 15px; font-weight: bold;
+}
+
+.navbar li .active{
+    border-bottom: 4px solid #f63e4e;
+}
+
+.navbar li a:hover{
+    border-bottom: 4px solid #f63e4e; font-weight: 100;
+}
+
+.menu2{
+    position: absolute; top: 0; right: 4%;
+    width: 50px; height: 50px;
+    padding: 10px; margin: 10px auto;
+    font-weight: bold;
+    display: flex;flex-direction: column;
+    justify-content: center;align-items: center;
+    cursor: pointer;
+}
+.menu2:hover{
+    background-color:rgb(34, 50, 97);
+}
+.menu2::after{
+    content: "";
+    height: 3px; width: 28px; 
+    background-color: white;
+    box-shadow: 0 10px 0 white;
+   transform: translateY(-10px); transition: 0.5s;
+    position: absolute;
+}
+.menu2::before{
+    content: "";
+    height: 3px; width: 28px; 
+    background-color: white;
+   transform: translateY(10px); transition: 0.5s;
+    position: absolute;
+}
+
+.contenu{
+    background-image: url(./e-shop_images/1.jpg);
+    background-size: cover; background-repeat: no-repeat;
+    padding: 0 5%; height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: flex-start;
+    color: #424144;
+}
+
+.contenu h1{
+    font-size: 40px;
+}
+
+.contenu p{
+    font-size: 20px; margin-top: 20px;
+}
+
+.contenu button{
+    margin-top: 30px; padding: 15px 30px;
+    border: none; border-radius: 10px;
+    background-color: #f63e4e; color: white;
+    cursor: pointer;
+}
+.contenu button a{
+    text-decoration: none; color: #424144;
+}
+
+.c{
+    text-align: left;
+    font-size: 30px;font-weight: 300;
+    margin-top: 30px; margin-left: 80px;
+    color: #424144;
+}
+
+.section_produits{
+    padding: 40px 5%;
+}
+
+.produits{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.carte{
+    width: 310px; margin-bottom: 20px;
+    background-color: #f5f5f5;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.carte img{
+    height: 250px; width: 100%; border-radius: 10px;
+}
+
+.carte .des{
+    padding: 5px 20px; opacity: 0.8;
+}
+
+.carte .titre{
+    font-weight: 900; font-size: 20px;
+    color:#424144;
+    padding: 0 20px;
+}
+
+.carte .box{
+    display: flex;
+    justify-content: space-between; align-items: center;
+    padding: 20px;
+}
+
+.box .prix{
+    font-size: 20px; font-weight: bold;  color: #f63e4e;
+}
+
+.box button{
+    padding: 10px 20px;
+    font-size: 13px; font-weight: 900; 
+    color: #f63e4e;
+    cursor: pointer; transition: 0.7s;
+}
+
+.box button:hover{
+    background: black; color: white; 
+    transform: translateX(-10px) translateY(5px);
+}
+
+footer{
+    background: #f3f4f6; height: 10vh;
+}
+
+footer p{
+    text-align: center; line-height: 10vh;
+}
+
+footer a{
+    text-decoration: none; font-weight: bold; color: #f63e4e;
+}
+
+/* responsive */
+
+@media screen and (max-width:700px) {
+
+.menu1{
+    top: -100px;
+}
+}
+
+.menu2.active::after{
+    box-shadow: 0 0 0 white; 
+    transform: rotate(45deg);
+}
+.menu2.active::before{
+    transform: rotate(-45deg);
+} 
+ .menu1.responsive{ 
+    display: flex; flex-direction: column;
+    background-color: #222;
+    position: absolute; top: 69px; right: 1px;
+    animation: animate-menu 1s forwards;
+}
+ .menu1.responsive li{ 
+    margin: 20px;
+    width:90px;
+}
+
+@keyframes animate-menu {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(100);
+    }
+}
